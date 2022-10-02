@@ -20,6 +20,7 @@ const renderTask = function () {
     listContainer.insertAdjacentHTML("afterbegin", html);
     document.querySelector(".task").textContent = input.value;
     input.value = "";
+
     const _edit = document.querySelector(".edit");
     const _complet = document.querySelector(".complet");
     const _delete = document.querySelector(".delete");
@@ -30,12 +31,13 @@ const renderTask = function () {
 
       add.removeEventListener("click", renderTask);
 
-      add.addEventListener("click", function () {
+      const editTask = function () {
         e.target.parentNode.parentNode.firstElementChild.textContent =
           input.value;
         add.addEventListener("click", renderTask);
-        input.value = "";
-      });
+      };
+
+      add.addEventListener("click", editTask);
     });
 
     _complet.addEventListener("click", function (e) {
@@ -53,9 +55,3 @@ const renderTask = function () {
 };
 
 add.addEventListener("click", renderTask);
-
-input.addEventListener("keyup", function (e) {
-  if (e.key === "Enter") {
-    renderTask();
-  }
-});
