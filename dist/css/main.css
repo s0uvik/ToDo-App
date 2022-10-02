@@ -82,3 +82,10 @@ body {
 .list-container .list-item .icon .delet {
   color: red;
 }
+
+@media (max-width: 500px) {
+  .container {
+    width: 90vw;
+    height: 75vh;
+  }
+}
