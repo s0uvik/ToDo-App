@@ -16,6 +16,11 @@ body {
   overflow: auto;
   background-color: rgb(128, 128, 62);
 }
+h1{
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+}
 
 .input {
   margin-top: 10px;
